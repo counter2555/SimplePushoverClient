@@ -11,6 +11,10 @@ python = "^3.13"
 pydantic = "^2.10.6"
 requests = "^2.32.3"
 
+[tool.poetry.packages]
+packages = [
+    { include = "simplepushoverclient", from = "src" }
+]
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
