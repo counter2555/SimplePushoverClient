@@ -21,7 +21,7 @@ jobs:
         run: pip install poetry==1.6.1
 
       - name: Install dependencies
-        run: poetry install --no-interaction --no-root --all-groups
+        run: poetry install --no-interaction --no-root
 
       - name: Run tests
         env:
