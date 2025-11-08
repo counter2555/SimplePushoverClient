@@ -37,4 +37,5 @@ jobs:
         run: |
           VERSION=${{ steps.version.outputs.version }}
           echo "Uploading version $VERSION"
-          python -m twine upload dist/*$VERSION* -u __token__ -p ${{ secrets.PYPI_TOKEN }}
+          python -m twine upload dist/simplepushoverclient-$VERSION-*
+            -u __token__ -p ${{ secrets.PYPI_TOKEN }}
