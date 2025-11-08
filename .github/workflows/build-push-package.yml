@@ -37,5 +37,4 @@ jobs:
         run: |
           VERSION=${{ steps.version.outputs.version }}
           echo "Uploading version $VERSION"
-          # Use shell expansion directly so Python sees the real filenames
-          python -m twine upload dist/simplepushoverclient-$VERSION-*.tar.gz dist/simplepushoverclient-$VERSION-*.whl -u __token__ -p ${{ secrets.PYPI_TOKEN }}
+          python -m twine upload dist/simplepushoverclient-$VERSION.tar.gz dist/simplepushoverclient-$VERSION-*.whl -u __token__ -p ${{ secrets.PYPI_TOKEN }}
