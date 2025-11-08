@@ -1,7 +1,7 @@
 import requests
 
-from SimplePushoverClient.models import SendMessageModel
-from SimplePushoverClient.exceptions import PushoverExceptionResponse
+from simplepushoverclient.models import SendMessageModel
+from simplepushoverclient.exceptions import PushoverExceptionResponse
 
 PUSHOVER_API_URL: str = r"https://api.pushover.net/1/messages.json"
 
