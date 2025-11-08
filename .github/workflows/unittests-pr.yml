@@ -17,8 +17,14 @@ jobs:
         with:
           python-version: '3.13'
 
+      - name: Remove old virtualenv
+        run: rm -rf .venv
+
+      - name: Install dependencies
+        run: poetry install --no-interaction --all-groups
+
       - name: Install Poetry
-        run: pip install poetry
+        run: pip install poetry==2.1.4
 
       - name: Configure Poetry
         run: |
