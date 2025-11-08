@@ -1,7 +1,7 @@
 import pytest
 
-from simplepushoverclient.pushover import PushoverClient, PUSHOVER_API_URL
-from simplepushoverclient.exceptions import PushoverExceptionResponse
+from src.simplepushoverclient.pushover import PushoverClient, PUSHOVER_API_URL
+from src.simplepushoverclient.exceptions import PushoverExceptionResponse
 
 
 def test_client_send_ok(requests_mock) -> None:

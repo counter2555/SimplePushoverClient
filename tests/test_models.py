@@ -1,6 +1,6 @@
 import pytest
 import json
-from simplepushoverclient.models import SendMessageModel
+from src.simplepushoverclient.models import SendMessageModel
 
 
 @pytest.mark.parametrize(
