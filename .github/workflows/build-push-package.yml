@@ -1,8 +1,9 @@
 name: Build & Publish to PyPI
 
 on:
-  pull_request:
-    branches: [ "main" ]
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -25,3 +26,10 @@ jobs:
       - name: Build the package
         run: |
           python -m build
+
+      - name: Upload package to PyPI
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: |
+          python -m twine upload --repository simplepushoverclient dist/*
