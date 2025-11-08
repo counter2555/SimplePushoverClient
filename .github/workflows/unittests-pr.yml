@@ -23,7 +23,7 @@ jobs:
       - name: Configure Poetry
         run: |
           poetry config virtualenvs.in-project true
-          poetry install --no-interaction --no-root --all-groups
+          poetry install --no-interaction --all-groups
 
       - name: Run tests
         run: poetry run pytest -v
