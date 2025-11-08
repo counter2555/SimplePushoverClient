@@ -2,14 +2,14 @@ name: Unittests (PR)
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -17,15 +17,13 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Remove old virtualenv
-        run: rm -rf .venv
-
       - name: Install Poetry
-        run: pip install poetry==2.1.4
+        run: pip install poetry==1.6.1
 
-      - name: Configure Poetry
-        run: |
-          poetry install --no-interaction --all-groups --no-root
+      - name: Install dependencies
+        run: poetry install --no-interaction --no-root --all-groups
 
       - name: Run tests
+        env:
+          PYTHONPATH: ./src
         run: poetry run pytest -v
