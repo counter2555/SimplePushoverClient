@@ -1,2 +1,2 @@
 # Re-export from src simplepushoverclient package
-from .models import *
+from src.simplepushoverclient.models import *

@@ -1,2 +1,2 @@
 # Re-export from src simplepushoverclient package
-from .exceptions import *
+from src.simplepushoverclient.exceptions import *
