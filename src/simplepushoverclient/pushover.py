@@ -45,4 +45,4 @@ class PushoverClient:
                     error = resp_json["errors"][0]
 
             raise PushoverExceptionResponse(status_code=r.status_code, message=error)
-        return r.status_code
+        return r.status_code # return HTTP status code
