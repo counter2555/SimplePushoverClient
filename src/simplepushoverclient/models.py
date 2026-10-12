@@ -1,13 +1,17 @@
 from typing import Optional
+
 from pydantic import BaseModel, Field
 
 
 class SendMessageModel(BaseModel):
-    token: str = Field()
-    user: str = Field()
-    device: Optional[str] = Field(default=None)
-    title: Optional[str] = Field(default=None)
-    message: str = Field()
+    """Request body for the Pushover messages endpoint"""
+
+    # repr=False keeps the API token out of logs and tracebacks
+    token: str = Field(repr=False)
+    user: str
+    device: Optional[str] = None
+    title: Optional[str] = None
+    message: str
 
     def dump(self) -> dict:
         """dumps the content as dictionary without null values
@@ -16,8 +20,3 @@ class SendMessageModel(BaseModel):
             dict: dictionary dump
         """
         return self.model_dump(exclude_none=True)
-
-if __name__ == "__main__":
-    msg = SendMessageModel(token="abc123", user="213", message="hello world!")
-
-    print(msg.dump())
