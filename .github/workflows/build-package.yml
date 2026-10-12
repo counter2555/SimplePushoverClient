@@ -31,7 +31,9 @@ jobs:
         run: |
           poetry install
 
-      # Removed test step to speed up CI
+      - name: Run unit tests
+        run: |
+          poetry run pytest -v
 
       - name: Build the package
         run: |
