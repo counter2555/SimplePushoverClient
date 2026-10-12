@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "simplepushoverclient"
-version = "0.1.3"
+version = "0.1.4"
 description = "A simple python client for sending pushover messages."
 authors = ["Benedikt Limbacher"]
 readme = "README.md"

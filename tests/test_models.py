@@ -26,3 +26,9 @@ def test_send_msg_dump(input_data: dict, expected_data: dict) -> None:
 
     # Assert
     assert json.dumps(expected_data) == json.dumps(dump)
+
+
+def test_send_msg_repr_hides_token() -> None:
+    model = SendMessageModel(token="secret-token", user="123", message="hello world!")
+
+    assert "secret-token" not in repr(model)
